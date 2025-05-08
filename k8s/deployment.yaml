@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test22
+  namespace: test22
+  labels:
+    app: test22
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test22
+  template:
+    metadata:
+      labels:
+        app: test22
+    spec:
+      containers:
+      - name: test22
+        image: test22:latest
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
