@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test22
+  namespace: test22
+spec:
+  selector:
+    app: test22
+  ports:
+  - port: 80
+    targetPort: 5000
+  type: ClusterIP
